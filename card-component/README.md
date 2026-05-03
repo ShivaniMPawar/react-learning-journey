@@ -1,16 +1,18 @@
-# React + Vite
+📌 What is a Card Component?
+A Card Component is one of the most fundamental UI patterns in React. It is a self-contained, reusable block that displays a consistent piece of information — in this case, a photo, a name, and a location — in a styled box.
+Instead of writing the same HTML twice for two "Tulips – Amsterdam" cards, you write the component once and render it as many times as needed by passing different data (props) each time.
+🧠 Core React Concepts Used
+1. Components: A component is a JavaScript function that returns JSX (HTML-like syntax).
+2. Props (Properties): Props are how you pass data into a component from its parent. They make the component reusable.
+3. Reusability : The same <Card /> component is rendered twice (or as many times as needed) with different props. This is the core power of React — write once, use everywhere.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+📁 File Structure
+src/
+├── components/
+│   ├── Card.jsx          ← The reusable card component
+│   └── Card.css          ← Card-specific styles
+├── App.jsx               ← Renders cards using props
+└── main.jsx              ← Entry point
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+<img width="956" height="410" alt="card-component" src="https://github.com/user-attachments/assets/466c8ce6-8597-4dd3-a097-6ff58dcca2a6" />
