@@ -1,0 +1,9 @@
+.button{
+    background-color:lightcoral;
+    padding:10px 20px;
+    color:black;
+    border-radius:5px;
+    border:none;
+    cursor:pointer;
+
+}
