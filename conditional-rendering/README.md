@@ -1,16 +1,60 @@
-# React + Vite
+1.UserGreeting React App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple React application demonstrating **conditional rendering** using props.
 
-Currently, two official plugins are available:
+2.Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## React Compiler
+src/
+├── App.jsx
+├── UserGreeting.jsx
+└── index.css
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+3.Components
 
-## Expanding the ESLint configuration
+a) `App.jsx`
+The root component. Renders the `UserGreeting` component and passes two props:
+- `isLoggedIn` — boolean that controls which message is displayed
+- `username` — string displayed in the welcome message when the user is logged in
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+b) `UserGreeting.jsx`
+A functional component that conditionally renders one of two messages based on the `isLoggedIn` prop:
+
+Prop Value -> Output 
+
+ `isLoggedIn={true}` -> Displays a styled **Welcome** message with the username |
+ `isLoggedIn={false}` -> Displays a **Please log in to continue** message |
+
+The component uses the **ternary operator** for conditional rendering:
+```jsx
+return (props.isLoggedIn ? welcomeMsg : loginMsg);
+```
+
+c)`index.css`
+Provides two CSS classes for visual differentiation:
+
+
+ `.welcome-msg` 
+ `.Login-msg` 
+
+
+4) Usage
+
+To toggle between the welcome and login messages, change the `isLoggedIn` prop in `App.jsx`:
+
+```jsx
+// Show welcome message
+<UserGreeting isLoggedIn={true} username="Jay" />
+
+// Show login prompt
+<UserGreeting isLoggedIn={false} username="Jay" />
+```
+
+Concepts Covered
+
+- Functional Components — both components are written as plain functions
+- Props — passing data (`isLoggedIn`, `username`) from parent to child
+- Conditional Rendering — using the ternary operator to display different JSX based on a boolean prop
+- CSS Class Styling — applying different styles to elements via `className`
+
+![Image](./src/image.png)
